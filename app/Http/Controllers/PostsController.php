@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Notification;
+use App\Notifications\NewPost;
 use App\User;
 use App\Post;
 use DB;
@@ -26,55 +28,56 @@ class PostsController extends Controller
     }
 
     public function cs210()
-    {   $posts=DB::select('SELECT * FROM posts WHERE module="cs210"');
+    {   $posts=DB::select('SELECT * FROM posts WHERE module="cs210" ORDER BY created_at DESC ');
         return view('mods.cs210')->with('posts', $posts);
     }
 
     public function cs320()
     {
-        $posts=DB::select('SELECT * FROM posts WHERE module="cs320"');
+        $posts=DB::select('SELECT * FROM posts WHERE module="cs320" ORDER BY created_at DESC ');
         return view('mods.cs320')->with('posts', $posts);
     }
 
     public function cs357()
     {
-        $posts=DB::select('SELECT * FROM posts WHERE module="cs357"');
+        $posts=DB::select('SELECT * FROM posts WHERE module="cs357" ORDER BY created_at DESC ');
         return view('mods.cs357')->with('posts', $posts);
     }
 
     public function en101()
     {
-        $posts=DB::select('SELECT * FROM posts WHERE module="en101"');
+        $posts=DB::select('SELECT * FROM posts WHERE module="en101" ORDER BY created_at DESC ');
         return view('mods.en101')->with('posts', $posts);
     }
 
     public function en203()
     {
-        $posts=DB::select('SELECT * FROM posts WHERE module="en203"');
+        $posts=DB::select('SELECT * FROM posts WHERE module="en203" ORDER BY created_at DESC ');
         return view('mods.en203')->with('posts', $posts);
     }
 
     public function en260()
     {
-        $posts=DB::select('SELECT * FROM posts WHERE module="en260"');
+        $posts=DB::select('SELECT * FROM posts WHERE module="en260" ORDER BY created_at DESC ');
         return view('mods.en260')->with('posts', $posts);
     }
 
     public function mt103()
     {
-        $posts=DB::select('SELECT * FROM posts WHERE module="mt103"');
+        $posts=DB::select('SELECT * FROM posts WHERE module="mt103" ORDER BY created_at DESC ');
+        
         return view('mods.mt103')->with('posts', $posts);
     }
 
     public function mt201()
     {
-        $posts=DB::select('SELECT * FROM posts WHERE module="mt201"');
+        $posts=DB::select('SELECT * FROM posts WHERE module="mt201" ORDER BY created_at DESC ');
         return view('mods.mt201')->with('posts', $posts);
     }
 
     public function mt212()
     {
-        $posts=DB::select('SELECT * FROM posts WHERE module="mt212"');
+        $posts=DB::select('SELECT * FROM posts WHERE module="mt212" ORDER BY created_at DESC ');
         return view('mods.mt212')->with('posts', $posts);
     }
     /**
@@ -123,7 +126,9 @@ class PostsController extends Controller
         $post->user_id=auth()->user()->id;
         $post->files=$filenamestore;
         $post->save();
-        return redirect('/subjects')->with('success', 'Post Created');
+
+       Notification::route('mail','lukecoyle10@hotmail.com')->notify(new NewPost($post));
+        return redirect('/profile')->with('success', 'Post Created');
     }
 
     /**
@@ -188,7 +193,7 @@ class PostsController extends Controller
             $post->files=$filenamestore;
         }
         $post->save();
-        return redirect('/subjects')->with('success', 'Post Updated');
+        return redirect('/profile')->with('success', 'Post Updated');
     }
 
     /**

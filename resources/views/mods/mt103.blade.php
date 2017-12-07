@@ -43,6 +43,7 @@
 			</div>
 		</div>
 	@endforeach
+
 @else
 	<p>no posts</p>
 @endif

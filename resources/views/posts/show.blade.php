@@ -13,10 +13,10 @@
 <div id="image">
         <img style="width:85%" src="/storage/files/{{$post->files}}">
 </div>
-<div id="reg">
+<div id="reg" class="panel">
 	<h4>{!!$post->body!!}</h4>
     <hr>
-   <small>Written on {{$post->created_at}}</small>
+   <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
 </div>
 @if(Auth::user()->id==$post ->user_id)
 <a href="/posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
@@ -39,7 +39,7 @@
 <div class="row">
 @if(count($post->comments)>0)
     @foreach($post->comments as $comment)
-        <div class="comment">
+        <div id="reg">
         <hr>
             <h4> {!!$comment->body!!} </h4>
             <small>Written on {{$comment->created_at}} by {{$comment->user->name}}</small>

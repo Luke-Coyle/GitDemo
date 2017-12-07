@@ -55,7 +55,7 @@
 						{!!Form::close()!!}
 						
 				</td>
-				<td><a href="/posts/{{$post->module}}" >{{$post->module}}</a></td>
+				<td><a href="{{$post->module}}" >{{$post->module}}</a></td>
 				
 			</tr>
 		@endforeach

@@ -17,11 +17,12 @@
             </button>
         </span>
     </div>
-	</div>
+	
 </form>
 				<hr>
 
 		<a href='/posts/create' class='btn btn-default'> Create post</a>
+		</div>
 <div id="reg"><h2>Post List, Have something to share? Share it here!</h2></div>
 
 

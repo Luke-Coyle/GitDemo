@@ -39,9 +39,14 @@ font-family:monospace;
 body{
     background-image: url(https://thebestscreenprinting.com/wp-content/uploads/2015/11/bgimg3.jpg);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     position: absolute;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100%x;
 }
 
 #title-card { 
