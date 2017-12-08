@@ -130,7 +130,7 @@ class PostsController extends Controller
         $post->save();
 
        Notification::route('mail','lukecoyle10@hotmail.com')->notify(new NewPost($post));
-        return redirect('/profile')->with('success', 'Post Created');
+        return redirect('/subjects')->with('success', 'Post Created');
     }
 
     /**
