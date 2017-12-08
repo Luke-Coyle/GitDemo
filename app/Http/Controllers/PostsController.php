@@ -24,7 +24,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        $user_id = auth()->user()->id;
+        $user=User::find($user_id);
+        return view('pages.profile')->with('posts', $user->posts)->with('comments', $user->comments);
     }
 
     public function cs210()
