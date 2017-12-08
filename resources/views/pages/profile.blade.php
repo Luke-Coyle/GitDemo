@@ -61,7 +61,7 @@
 		@endforeach
 	</table>
 @else
-<p> You have no posts </p>
+<div id=reg><p> You have no posts </p></div>
 
 @endif
 
@@ -92,7 +92,7 @@
 
 	
 @else
-<p> You have no comments </p>
+<div id=reg><p> You have no comments </p></div>
 
 @endif
 

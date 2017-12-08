@@ -12,8 +12,9 @@
    
 <div id="image">
         <img style="width:85%" src="/storage/files/{{$post->files}}">
+        
 </div>
-<div id="reg" class="panel">
+<div id="pbody" class="panel">
 	<h4>{!!$post->body!!}</h4>
     <hr>
    <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
@@ -35,13 +36,13 @@
 {!!Form::close()!!}
 @endif
 
-<h1>******************COMMENTS***************************</h1>
+<div id="reg"><h1>******************COMMENTS***************************</h1></div>
 <div class="row">
 @if(count($post->comments)>0)
     @foreach($post->comments as $comment)
-        <div id="reg">
-        <hr>
-            <h4> {!!$comment->body!!} </h4>
+        <div id="cbody" class="panel">
+        
+            <h3> {!!$comment->body!!} </h3>
             <small>Written on {{$comment->created_at}} by {{$comment->user->name}}</small>
 
             @if(Auth::user()->id==$comment ->user_id)
@@ -49,9 +50,9 @@
 
             @elseif(Auth::user()->name=="admin")
                 <a href="/comments/{{$comment->id}}/edit" class="btn btn-default">Edit</a>
-        </div>
+        
             @endif
-
+        </div>
 
     @endforeach
 
@@ -61,10 +62,10 @@
 </div>
 
 <div class="row">
-    <div id="comment-form">
+    <div id="reg">
     <hr>
     {{Form::open(['route' => ['comments.store', $post->id], 'method'=> 'POST'])}}
-                {{Form::label('body', 'Comment: ') }}
+               <h3> {{Form::label('body', 'Comment: ') }} </h3>
                 {{Form::textarea('body', null, ['class'=>'form-control'])}}
 
                 {{Form::submit('Add Comment', ['class'=>' btn btn-success btn-block', 'style'=> 'margin-bottom:50px;']) }}

@@ -29,7 +29,7 @@
 	
  <div id="table">
         <table > <thead><tbody>
-            <tr><th><h2>Modules</h2><!-- Title to show what page you are on --></th></tr>
+           <tr><th><h2><b>Modules</b></h2><!-- Title to show what page you are on --></th></tr>
             <tr><td><a href=/cs210>CS210: Data Structures & Algorithms</a> </td></tr>
             <tr><td><a href=/cs320>CS320: Computer Networks</a></td></tr>
             <tr><td><a href=/cs357>CS357: Software Verification</a></td></tr>
