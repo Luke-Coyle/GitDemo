@@ -28,23 +28,6 @@
     color:black;
 }
 
-#pbody{
-    font-family:monospace;
-    opacity:0.7;
-    color:black;
-    width:60%;
-    float:right;
-
-}
-
-#cbody{
-    font-family:monospace;
-    opacity:0.7;
-    color:black;
-    width:60%;
-
-}
-
 #post{
 font-family:monospace;
     opacity:0.9;
@@ -93,7 +76,7 @@ body{
 #image{
     float:left;
   width:40%;
-   padding-bottom:3%;
+   
 }
 
 #postbody{
