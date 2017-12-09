@@ -129,7 +129,7 @@ class PostsController extends Controller
         $post->files=$filenamestore;
         $post->save();
 
-       Notification::route('mail','lukecoyle10@hotmail.com')->notify(new NewPost($post));
+       //Notification::route('mail','lukecoyle10@hotmail.com')->notify(new NewPost($post));
         return redirect('/profile')->with('success', 'Post Created');
     }
 
