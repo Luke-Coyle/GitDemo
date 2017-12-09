@@ -29,7 +29,7 @@
 	
 <div id="table">
         <table> <thead><tbody>
-          <tr><th><h2><b>Modules</b></h2><!-- Title to show what page you are on --></th></tr>
+            <tr><th><h2>Modules</h2><!-- Title to show what page you are on --></th></tr>
             <tr><td><a href=/en101>EN101: Foundational English</a> </td></tr>
             <tr><td><a href=/en203>EN203: Literary Forms</a></td></tr>
             <tr><td><a href =/en260>EN260: Great Books</a></td></tr>

@@ -4,7 +4,7 @@
 
 @section('content')
 
-	<div id=reg class="row" style="padding-top:5%">
+	<div class="row">
 		<div class="col-md-6 col-md-offset-3" style="padding-top:10%">
 			<div class="panel panel-default">
 				<div class="panel-heading">Reset Password</div>
@@ -15,7 +15,7 @@
 						{{ session('status') }}
 					</div>
 				@endif
-					<div id="reg">
+					
 					{!! Form::open(['url' => 'password/reset', 'method' => "POST"]) !!}
 
                     {{Form::hidden('token', $token)}}
@@ -32,11 +32,10 @@
 					{{ Form::submit('Reset Password', ['class' => 'btn btn-primary']) }}
 
 					{{ Form::close() }}
-				</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
-	
 
 @endsection

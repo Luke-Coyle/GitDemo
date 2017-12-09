@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Notification;
-use App\Notifications\NewPost;
 use App\User;
 use App\Post;
 use DB;
@@ -24,9 +22,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $user_id = auth()->user()->id;
-        $user=User::find($user_id);
-        return view('pages.profile')->with('posts', $user->posts)->with('comments', $user->comments);
+        //
     }
 
     public function cs210()
@@ -129,7 +125,7 @@ class PostsController extends Controller
         $post->files=$filenamestore;
         $post->save();
 
-       Notification::route('mail','lukecoyle10@hotmail.com')->notify(new NewPost($post));
+       Notification::route('mail','garyjh@gmail.com')->notify(new NewPost($post));
         return redirect('/profile')->with('success', 'Post Created');
     }
 

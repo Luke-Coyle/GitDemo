@@ -5,7 +5,7 @@
 <title>UNI-Threads</title>
 </head>
 <div id="title-card">
-		<h1>MT212: Linear Algebra</h1>
+		<h1>MT201: Calculus 3</h1>
         <a href="/maths">Go Back to Maths</a>
 		<form action="/search" method="POST" role="search">
     {{ csrf_field() }}
@@ -17,18 +17,16 @@
             </button>
         </span>
     </div>
-
 </form>
 				<hr>
 
-		{{link_to_action('PostsController@create', 'Create Post', array('mod'=>'mt212'), array('class' => 'btn btn-default'))}}
+		<a href='/posts/create' class='btn btn-default'> Create post</a>
 		
 </div>
-<h1>Post List, Have something to share? Share it here!</h1>
+<div id="reg"><h2>Post List, Have something to share? Share it here!</h2></div>
 <div id="content">
-<hr>
-<div id="post">
-		
+		<hr>
+		<div id="post">
 		@if(count($posts)>0)
 	@foreach($posts as $post)
 
@@ -49,7 +47,6 @@
 	<p>no posts</p>
 @endif
 	
-
 </div>
 </div>
 </body>

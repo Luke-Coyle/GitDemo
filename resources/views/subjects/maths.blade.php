@@ -29,7 +29,7 @@
 	
 <div id="table">
         <table> <thead><tbody>
-            <tr><th><h2><b>Modules</b></h2><!-- Title to show what page you are on --></th></tr>
+            <tr><th><h2>Modules</h2><!-- Title to show what page you are on --></th></tr>
             <tr><td><a href=/mt103>MT103: Calculus</a> </td></tr>
             <tr><td><a href=/mt201>MT201: Calculus 3</a></td></tr>
             <tr><td><a href=/mt212>MT212: Linear Algebra</a></td></tr>
