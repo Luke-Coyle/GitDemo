@@ -21,12 +21,11 @@
 
 		<hr>
 
-		<!--<a href='/posts/create' class='btn btn-default'> Create post</a>-->
-		{{link_to_action('PostsController@create', 'Create Post', array('mod'=>'cs210'), array('class' => 'btn btn-default'))}}
+		<a href='/posts/create' class='btn btn-default'> Create post</a>
 			
 </div>
 
-<h1>Post List, Have something to share? Share it here!</h1>
+<div id="reg"><h2>Post List, Have something to share? Share it here!</h2></div>
 
 <div id="content">
 		<hr>
@@ -55,4 +54,4 @@
 
 		</div>
 		</body>
-@endsection
+		@endsection

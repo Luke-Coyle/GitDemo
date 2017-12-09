@@ -4,7 +4,7 @@
 <head>
 <title>UNI-Threads</title>
 </head>
-<div id="reg" style="padding-top:5%">
+<div>
 		<h1>Create new Post</h1>
         {!! Form::open(['action'=>'PostsController@store','method' => 'POST','enctype'=>'multipart/form-data']) !!}
             <div class="form-group">
@@ -12,8 +12,8 @@
                 {{Form::text('title', '', ['class' => 'form-control', 'placeholder'=>'Title'])}}
             </div> 
             <div class="form-group">
-                
-                {{Form::hidden('module', htmlspecialchars($_GET["mod"]))}}
+                {{Form::label('module', 'Module')}}
+                {{Form::text('module', '', ['class' => 'form-control', 'placeholder'=>'Please put module code here e.g. MT103 Calculus 1 should be written as: mt103'])}}
             </div> 
             <div class="form-group">
                 {{Form::label('body', 'Body')}}
