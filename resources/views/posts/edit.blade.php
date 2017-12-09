@@ -4,7 +4,7 @@
 <head>
 <title>UNI-Threads</title>
 </head>
-<div>
+<div id=reg style="padding-top:5%">
 		<h1>Create new Post</h1>
         {!! Form::open(['action'=>['PostsController@update', $post->id],'method' => 'POST','enctype'=>'multipart/form-data']) !!}
             <div class="form-group">

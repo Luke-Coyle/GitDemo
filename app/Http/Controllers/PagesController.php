@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Post;
+use Auth;
 class PagesController extends Controller
 
 {
@@ -103,6 +104,13 @@ class PagesController extends Controller
     public function profile()
     {   $user_id = auth()->user()->id;
         $user=User::find($user_id);
+        if($user->verified==0)
+        {
+            Auth::guard('web')->logout();
+            //$request->session()->invalidate(); //Keeping this would log out both admin and user if either one logs out
+            return redirect('/');
+        }
+
         return view('pages.profile')->with('posts', $user->posts)->with('comments', $user->comments);
     }
     public function home()
