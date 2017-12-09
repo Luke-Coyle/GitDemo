@@ -87,26 +87,26 @@ table {
 <body>
         
 
-        <div id = "container" style="padding-left: 4%">
+        <div id = "container">
             <div id = "login">
-                <h1>Welcome to Uni-Threads!</h1>  <!-- I imagine we would want both of these lines centered for this page -->
+                <h1><b>Welcome to Uni-Threads!</b></h1>  <!-- I imagine we would want both of these lines centered for this page -->
                 <h3>A private forum for university students to learn from and help each other<h3>
            
             @if(Auth::guest())
             <div id = "buttons">
-                <a href="/register">Sign Up</a> <a href="/login">Log in</a> <!-- These buttons need to be styled. -->
+                <a href="/register" class="btn btn-default">Sign Up</a> <a href="/login" class="btn btn-default">Log in</a> <!-- These buttons need to be styled. -->
             </div>
             @endif
 
             @if(Auth::user())
             <div id = "buttons">
-                <a href="/subjects">Subjects</a> <a href="/profile">Profile</a> <!-- These buttons need to be styled. -->
+                <a href="/subjects" class="btn btn-default">Subjects</a> <a href="/profile" class="btn btn-default">Profile</a> <!-- These buttons need to be styled. -->
             </div>
             @endif
             <!-- I'm going to leave it to dallen or ela to format the page so the buttons appear separate from the proceeding line. -->
 
             <div id = "unimail">
-                <p1>Please sign up with your university email to access the forums</p1>
+                <small>Please sign up with your university email to access the forums and check the spam folder!</small>
             </div>
         <!-- If anybody thinks the wording on this page should be redone please feel free to do it and just add a comment with date/times of update and who it was by just so we can keep track-->
         </div>

@@ -19,15 +19,13 @@
     </div>
 </form>
 				<hr>
-			
-
-		<a href='/posts/create' class='btn btn-default'> Create post</a>
+<div id="post">
+		{{link_to_action('PostsController@create', 'Create Post', array('mod'=>'mt103'), array('class' => 'btn btn-default'))}}
 </div>
-	<div id="reg"><h2>Post List, Have something to share? Share it here!</h2></div>
+<h1>Post List, Have something to share? Share it here!</h1>
 <div id="content">
 	
 		<hr>
-		<div id="post">
 		@if(count($posts)>0)
 	@foreach($posts as $post)
 		<div class="well">
@@ -43,7 +41,6 @@
 			</div>
 		</div>
 	@endforeach
-
 @else
 	<p>no posts</p>
 @endif

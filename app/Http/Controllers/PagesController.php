@@ -104,10 +104,10 @@ class PagesController extends Controller
     public function profile()
     {   $user_id = auth()->user()->id;
         $user=User::find($user_id);
-
-        if($user->verified==0){
+        if($user->verified==0)
+        {
             Auth::guard('web')->logout();
-            
+            //$request->session()->invalidate(); //Keeping this would log out both admin and user if either one logs out
             return redirect('/');
         }
 
