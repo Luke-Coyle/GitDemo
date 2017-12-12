@@ -4,6 +4,7 @@
 <head>
 <title>UNI-Threads</title>
 </head>
+<div id=title-card>
 <a href="/profile"> My Profile </a><a href="/subjects"> Back to Subjects</a>
 
 				<form action="/search" method="POST" role="search">
@@ -17,8 +18,8 @@
         </span>
     </div>
 </form>
-
-<div>
+</div>
+<div id=reg>
 		<h1>Search Results for <b>{{$query}} </b> :</h1>
         
 
@@ -29,9 +30,10 @@
 
 <div id="content">
 	
-		<hr>
+		
 		@if(isset($details))
 	@foreach($details as $post)
+	<div id=post>
 		<div class="well">
 			<div class="row">
 				<div class="col-md-4 col-sm-4">
@@ -43,6 +45,7 @@
 						<small>Written on {{$post->created_at}}</small>
 				</div>	
 			</div>
+		</div>
 		</div>
 	@endforeach
 @else
