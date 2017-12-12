@@ -12,8 +12,7 @@
                 {{Form::text('title', $post->title, ['class' => 'form-control', 'placeholder'=>'Title'])}}
             </div> 
             <div class="form-group">
-                {{Form::label('module', 'Module')}}
-                {{Form::text('module', $post->module, ['class' => 'form-control', 'placeholder'=>'Please put module code here e.g. MT103 Calculus 1 should be written as: mt103'])}}
+               
             </div> 
             <div class="form-group">
                 {{Form::label('body', 'Body')}}

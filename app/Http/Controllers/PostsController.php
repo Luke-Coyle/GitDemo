@@ -174,7 +174,7 @@ class PostsController extends Controller
     {
         $this->validate($request, [
             'title'=>'required',
-            'module'=>'required',
+           
             'body'=>'required'
 
         ]);
@@ -189,7 +189,7 @@ class PostsController extends Controller
         
         $post= Post::find($id);
         $post->title=$request->input('title');
-        $post->module=$request->input('module');
+        
         $post->body=$request->input('body');
         if($request->hasFile('files')){
             $post->files=$filenamestore;
